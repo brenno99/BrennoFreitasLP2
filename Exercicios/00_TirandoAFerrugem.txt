@@ -1,0 +1,4 @@
+Resolva o exercício abaixo em duas versões, uma COM e outra SEM a utilização de arrays e listas:
+
+
+Faça um programa que leia uma quantidade indefinida de números positivos -- fornecidos pelo usuário. A leitura deve terminar ao ser identificado o número 0 (zero) como entrada. Calcule e exiba a média aritmética de todos os números fornecidos, sem incluir o Zero em seus cálculos.
