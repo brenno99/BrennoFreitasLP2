@@ -25,7 +25,7 @@ namespace Exercício_aula31032015
             
             for (int i = 0; i < y ; i++)
             {
-                potencia *= x;
+                potencia = potencia * x; 
             }
 
             Console.WriteLine("A potenciação de x elevado a y é: " + potencia);
