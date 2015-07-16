@@ -20,23 +20,13 @@ namespace Exercício_aula31032015
 
             Console.WriteLine("Digite o valor de y: ");
             y = int.Parse(Console.ReadLine());
-
-            
-            
+                                    
             for (int i = 0; i < y ; i++)
             {
                 potencia = potencia * x; 
             }
 
             Console.WriteLine("A potenciação de x elevado a y é: " + potencia);
-        
-        
-        
-        
-        
-        
-        
-        
         
         }
     }
