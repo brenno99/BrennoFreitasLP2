@@ -24,8 +24,6 @@ namespace _3C_Exercicio12
             Trabalhador tra = new Trabalhador();
             Gerente g = new Gerente();
 
-            int a = 0; int b = 0; int c = 0;
-
             for (int i = 1; i <= qtdFuncs; i++)
             {
                 Console.WriteLine("Digite qual funcionário é desejado: gerente, terceirizado ou trabalhador: ");
@@ -34,61 +32,59 @@ namespace _3C_Exercicio12
                 if (tipoFuncionario == "terceirizado")
                 {
                     Console.WriteLine("Nome : ");
-                    t.Set_nome(Console.ReadLine());
+                    t.Nome = (Console.ReadLine());
 
                     Console.WriteLine("Matricula : ");
-                    t.Set_matricula(Console.ReadLine());
+                    t.Matricula = (Console.ReadLine());
 
                     Console.WriteLine("CPF : ");
-                    t.Set_cpf(Console.ReadLine());
+                    t.CPF = (Console.ReadLine());
 
                     Console.WriteLine("Data Nascimento : ");
-                    t.Set_dataNascimento(Console.ReadLine());
+                    t.DataNascimento = (Console.ReadLine());
 
                     Console.Write("CNPJ : ");
-                    t.Set_cnpj(Console.ReadLine());
+                    t.CNPJ = (Console.ReadLine());
                     terceirizados.Add(t);
-                    a++;
+                    
                 }
 
-              else if (tipoFuncionario == "trabalhador")
+                else if (tipoFuncionario == "trabalhador")
                 {
-                    double valeAlimentacao_Trabalhador = tra.ValeAlimentacaoTrabalhador();
-
                     Console.Write("Nome: ");
-                    tra.Set_nome(Console.ReadLine());
+                    tra.Nome = (Console.ReadLine());
 
                     Console.Write("Matrícula: ");
-                    tra.Set_matricula(Console.ReadLine());
+                    tra.Matricula = (Console.ReadLine());
 
                     Console.Write("Data de Nascimento: ");
-                    tra.Set_dataNascimento(Console.ReadLine());
+                    tra.DataNascimento = (Console.ReadLine());
 
                     Console.Write("CPF: ");
-                    tra.Set_cpf(Console.ReadLine());
-
+                    tra.CPF = (Console.ReadLine());                   
+                    
                     trabalhadores.Add(tra);
-                    b++;
+                    double valeAlimentacao_Trabalhador = tra.ValeAlimentacaoTrabalhador();
                 }
 
                 else if (tipoFuncionario == "gerente")
                 {
                     Console.Write("Nome: ");
-                    g.Set_nome(Console.ReadLine());
+                    g.Nome = (Console.ReadLine());
 
                     Console.Write("Matrícula: ");
-                    g.Set_matricula(Console.ReadLine());
+                    g.Matricula = (Console.ReadLine());
 
                     Console.Write("Data de Nascimento: ");
-                    g.Set_dataNascimento(Console.ReadLine());
+                    g.DataNascimento = (Console.ReadLine());
 
                     Console.Write("CPF: ");
-                    g.Set_cpf(Console.ReadLine());
+                    g.CPF = (Console.ReadLine());
 
                     Console.Write("Área de Gerenciação: ");
-                    g.Set_areaGerenciada(Console.ReadLine());
+                    g.AreaGerenciada = (Console.ReadLine());
                     gerentes.Add(g);
-                    c++;
+                    
                 }
             }//fim for - leitura 
 
@@ -98,11 +94,11 @@ namespace _3C_Exercicio12
 
                 for (int j = 0; j < terceirizados.Count; j++)
                 {
-                    Console.WriteLine("Nome: " + terceirizados[j].Get_nome());
-                    Console.WriteLine("Terceirizado: " + terceirizados[j].Get_matricula());
-                    Console.WriteLine("Data de Nascimento: " + terceirizados[j].Get_dataNascimento());
-                    Console.WriteLine("CPF: " + terceirizados[j].Get_cpf());
-                    Console.WriteLine("CNPJ: " + terceirizados[j].Get_cnpj());
+                    Console.WriteLine("Nome: " + terceirizados[j].Nome);
+                    Console.WriteLine("Terceirizado: " + terceirizados[j].Matricula);
+                    Console.WriteLine("Data de Nascimento: " + terceirizados[j].DataNascimento);
+                    Console.WriteLine("CPF: " + terceirizados[j].CPF);
+                    Console.WriteLine("CNPJ: " + terceirizados[j].CNPJ);
 
                 }
             }// fim terceirizado
@@ -113,18 +109,17 @@ namespace _3C_Exercicio12
 
                 for (int n = 0; n < gerentes.Count; n++)
                 {
+                   Console.WriteLine("Nome" + gerentes[n].Nome);
+                   Console.WriteLine("Matrícula: " + gerentes[n].Matricula);
+                   Console.WriteLine("Data de Nascimento: " + gerentes[n].DataNascimento);
+                   Console.WriteLine("CPF: " + gerentes[n].CPF);
+                   Console.WriteLine("Salário: " + gerentes[n].Salario);
+                   Console.WriteLine("Área de atuação: " + gerentes[n].AreaGerenciada);
+                 
                    double valeAlimentacaoGerente = gerentes[n].ValeAlimentacaoGerente();
-
-                   Console.WriteLine("Nome" + gerentes[n].Get_nome());
-                   Console.WriteLine("Matrícula: " + gerentes[n].Get_matricula());
-                   Console.WriteLine("Data de Nascimento: " + gerentes[n].Get_dataNascimento());
-                   Console.WriteLine("CPF: " + gerentes[n].Get_cpf());
-                   Console.WriteLine("Salário: " + gerentes[n].Get_salario());
-                   Console.WriteLine("Área de atuação: " + gerentes[n].Get_areaGerenciada());
                    Console.WriteLine("Vale Alimentação: " + valeAlimentacaoGerente);
-                   Console.WriteLine();
-
-                despesa_total_empresa += gerentes[n].Get_salario() + valeAlimentacaoGerente;
+                 
+                   despesa_total_empresa += gerentes[n].Salario + valeAlimentacaoGerente;
             }
          }
 
@@ -134,16 +129,16 @@ namespace _3C_Exercicio12
                 
                 for (int o = 0; o < trabalhadores.Count; o++)
                 {
-                    double valeAlimentacaoTrabalhador = trabalhadores[o].ValeAlimentacaoTrabalhador();
+                    Console.WriteLine("Nome: " + trabalhadores[o].Nome);
+                    Console.WriteLine("Matrícula: " + trabalhadores[o].Matricula);
+                    Console.WriteLine("Data de Nascimento: " + trabalhadores[o].DataNascimento);
+                    Console.WriteLine("CPF: " + trabalhadores[o].CPF);
+                    Console.WriteLine("Salário: " + trabalhadores[o].Salario());
 
-                    Console.WriteLine("Nome: " + trabalhadores[o].Get_nome());
-                    Console.WriteLine("Matrícula: " + trabalhadores[o].Get_matricula());
-                    Console.WriteLine("Data de Nascimento: " + trabalhadores[o].Get_dataNascimento());
-                    Console.WriteLine("CPF: " + trabalhadores[o].Get_cpf());
-                    Console.WriteLine("Salário: " + trabalhadores[o].Get_salario());
+                    double valeAlimentacaoTrabalhador = trabalhadores[o].ValeAlimentacaoTrabalhador();
                     Console.WriteLine("Vale Alimentação: " + valeAlimentacaoTrabalhador);
 
-                    despesa_total_empresa += trabalhadores[o].Get_salario() + trabalhadores[o].ValeAlimentacaoTrabalhador();
+                    despesa_total_empresa += trabalhadores[o].Salario() + trabalhadores[o].ValeAlimentacaoTrabalhador();
                 }
             }
 

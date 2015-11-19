@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace _3C_Exercicio12
 {
-    class Terceirizado: Funcionario
+    class FuncionariosEmpresa
     {
-        public string CNPJ { get; set; }
-
     }
 }

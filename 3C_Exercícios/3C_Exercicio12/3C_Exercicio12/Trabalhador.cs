@@ -8,14 +8,9 @@ namespace _3C_Exercicio12
 {
     class Trabalhador: Funcionario
     {
-        private double _salario;
+        private double _salario = 5000;
 
-        public void Set_salario(double salario)
-        {
-            _salario = salario;
-        }
-
-        public double Get_salario()
+        public  double Salario()
         {
             return _salario;
         }
